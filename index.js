@@ -5,7 +5,7 @@
 
 const inquirer = require("inquirer");
 const db = require('./db/connection')
-const cTable = require('console.table');
+// const cTable = require('console.table');
 
 async function viewDepartments() {
     const departments = await db.query('SELECT id, name FROM departments');

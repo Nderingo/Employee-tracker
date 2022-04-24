@@ -5,7 +5,7 @@ CREATE DATABASE employee_db;
 -- Makes it so all of the following code will affect employee_db --
 USE employee_db;
 
-CREATE TABLE departments (
+CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(30) NOT NULL,
   PRIMARY KEY (id)
@@ -18,7 +18,7 @@ CREATE TABLE roles (
   department_id INT,
   PRIMARY KEY (id),
   FOREIGN KEY (department_id)
-  REFERENCES departments(id)
+  REFERENCES department(id)
   ON DELETE SET NULL
 );
 
@@ -34,3 +34,4 @@ CREATE TABLE employees (
   ON DELETE SET NULL,
   FOREIGN KEY (manager_id)
   REFERENCES employees(id)
+);
